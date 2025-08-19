@@ -1,0 +1,194 @@
+/* RESET BÁSICO */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #1e3c72, #2a5298);
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  overflow: hidden;
+  position: relative;
+}
+
+/* FONDO DECORATIVO */
+body::before {
+  content: '';
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background-image: radial-gradient(circle at 10% 10%, rgba(255,255,255,0.05) 1%, transparent 40%),
+                    radial-gradient(circle at 80% 30%, rgba(255,255,255,0.03) 1%, transparent 50%),
+                    radial-gradient(circle at 50% 80%, rgba(255,255,255,0.05) 1%, transparent 30%);
+  animation: float 20s linear infinite;
+  z-index: 0;
+}
+
+/* TÍTULO COLORIDO */
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  z-index: 1;
+}
+
+h1 span {
+  padding: 0 0.3rem;
+  font-weight: bold;
+}
+
+h1 span:nth-child(1) { color: #ff6f61; }   /* Piedra */
+h1 span:nth-child(2) { color: #4fc3f7; }   /* Papel */
+h1 span:nth-child(3) { color: #81c784; }   /* Tijera */
+h1 span:nth-child(4) { color: #fbc02d; }   /* Lagarto */
+h1 span:nth-child(5) { color: #ba68c8; }   /* Spock */
+
+/* ZONA DE BATALLA */
+.batallas {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 2rem;
+  width: 90%;
+  max-width: 600px;
+  margin-bottom: 2rem;
+  z-index: 1;
+}
+
+.mieleccion, .eleccionCPU {
+  font-size: 1.5rem;
+  width: 45%;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* BOTONES DE JUEGO */
+.btn_actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  z-index: 1;
+}
+
+.btn {
+  font-size: 1.2rem;
+  padding: 1rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: #fff;
+  color: #2a5298;
+  transition: all 0.3s ease;
+  min-width: 100px;
+}
+
+.btn:hover {
+  background-color: #e0e0e0;
+  transform: scale(1.05);
+}
+
+/* ANIMACIÓN DE FONDO */
+@keyframes float {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(-5%, -5%); }
+  100% { transform: translate(0, 0); }
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .batallas {
+    flex-direction: column;
+  }
+
+  .mieleccion, .eleccionCPU {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .btn {
+    font-size: 1rem;
+    padding: 0.8rem 1.2rem;
+  }
+}
+
+
+.reglas {
+  background: rgba(255, 255, 255, 0.1);
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 1.5rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  color: #fff;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  z-index: 1;
+}
+
+.reglas h2 {
+  margin-bottom: 1rem;
+  text-align: center;
+  font-weight: 700;
+  color: #fbc02d; /* amarillo */
+}
+
+.reglas ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+}
+
+.reglas li {
+  margin-bottom: 0.6rem;
+}
+
+.resultado {
+  background-color: rgba(255, 255, 255, 0.15);
+  padding: 1.2rem 2rem;
+  margin-top: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #ffffff;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  transition: all 0.3s ease-in-out;
+}
+
+.contador {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 1rem 2rem;
+  margin-top: 1rem;
+  border-radius: 12px;
+  text-align: center;
+  font-size: 1.1rem;
+  color: #ffffff;
+  font-weight: 600;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(3px);
+}
+
+.contador p {
+  margin: 0.4rem 0;
+}

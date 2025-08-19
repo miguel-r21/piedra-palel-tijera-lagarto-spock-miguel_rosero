@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Proyecto_02</title>
+</head>
+<body>
+    <h1><span>Piedra</span>, <span>Papel</span>, <span>Tijera</span>, <span>Lagarto</span> y <span>Spock</span></h1>
+    <!-- Pantalla de batalla -->
+    <div class="batallas">
+        <div class="mieleccion"></div>
+        <div class="eleccionCPU"></div>
+    </div>
+    <!-- botones de acción-->
+    <div class="btn_actions">
+        <button class="btn" data-jugada="Piedra">🪨</button>
+        <button class="btn" data-jugada="Papel">📄</button>
+        <button class="btn" data-jugada="Tijera">✂️</button>
+        <button class="btn" data-jugada="Lagarto">🦎</button>
+        <button class="btn" data-jugada="Spock">🖖</button>
+    </div>
+
+    <div class="reglas">
+        <h2>Reglas del Juego</h2>
+        <ul>
+            <li><strong>Piedra</strong> aplasta <strong>Tijera</strong> y aplasta <strong>Lagarto</strong>.</li>
+            <li><strong>Papel</strong> envuelve <strong>Piedra</strong> y refuta <strong>Spock</strong>.</li>
+            <li><strong>Tijera</strong> corta <strong>Papel</strong> y decapita <strong>Lagarto</strong>.</li>
+            <li><strong>Lagarto</strong> envenena <strong>Spock</strong> y devora <strong>Papel</strong>.</li>
+            <li><strong>Spock</strong> rompe <strong>Tijera</strong> y vaporiza <strong>Piedra</strong>.</li>
+        </ul>
+        <p>Elige tu opción y compite contra la CPU.</p>
+    </div>
+
+    <div class="resultado"></div>
+    <!-- Contador de partidas -->
+    <div class="contador">
+        <p>Victorias: 0</p>
+        <p>Empates: 0</p>
+        <p>Derrotas: 0</p>
+    </div>
+    <script src="../js/main.js"></script>
+
+</body>
+</html>
